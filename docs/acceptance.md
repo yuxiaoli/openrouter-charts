@@ -1,28 +1,36 @@
-# Acceptance status
+# Release acceptance
 
-Local implementation verified. Public repository created and verified; GitHub Pages deployment is pending. Do not treat the intended Pages URL as a verified live service yet.
+The gallery is live at **https://yuxiaoli.github.io/openrouter-charts/**. The public repository is https://github.com/yuxiaoli/openrouter-charts, with `develop` as its default and production branch. The initial `main` baseline is preserved at `0533a8d98e858a5028b912fc3b1a65d7c91c8d72`.
 
-Source fixture is the already published archive commit `e0b6f46bfae683cce14269bfcde632552aeffd8a`, snapshot `2026-11-10T093020Z-eb9b8257a8`, completed `2026-11-10T09:36:43.114Z`.
+This is a dated release receipt, not a claim that future jobs have already run. The currently served `version.json` and Actions history are the authority for later builds.
 
-## Verified locally
+## Publication and refresh
 
-- A fresh remote probe pinned the published archive to the exact commit above.
-- Downloaded 90 existing archive files for 23 public chart-input datasets, verified physical/logical SHA-256 digests and record/chunk counts. The remaining five public datasets are represented by real manifest coverage metadata rather than unnecessary bulk downloads.
-- Built all 14 PNGs and the static site successfully from that fresh downloaded input with the locked dependency environment. Also built successfully from an existing local archive checkout.
-- 20 Python tests cover path and public-data boundaries, complete-snapshot selection, gzip/checksum/count validation, unchanged-refresh detection, manual forced refresh, changed-code refresh, newer failed attempts and snapshot mismatch rejection.
-- Five isolated JavaScript behavior tests cover filter/reset, search/empty recovery, repeated zoom/close/reopen, backdrop behavior and stale-age warning. These tests use a small DOM stub, not a real browser.
-- JSON Schema examples, source registry, generated version metadata, all 14 chart identities/hashes and every relative page asset passed validation. JavaScript syntax, Python compile and shell command-reference syntax passed.
-- Renderer contact-sheet visual review preserved the original Chinese typography, blue/gold palette and 14-chart layouts. Actual desktop/mobile webpage interaction remains unverified.
+- [Implementation PR #1](https://github.com/yuxiaoli/openrouter-charts/pull/1) passed review and CI, then merged normally into `develop` at `700ff949b3b0e66be5aaf9f2b5bda2ecf2880ffc`.
+- [Release deployment](https://github.com/yuxiaoli/openrouter-charts/actions/runs/42861862149) succeeded. Pages serves the exact source commit above. Pages uses the Actions build type, HTTPS and a deployment environment limited to `develop`.
+- [Manual refresh](https://github.com/yuxiaoli/openrouter-charts/actions/runs/42862888497) succeeded through fresh archive download, checksum validation, all tests, all 14 renders, artifact upload and Pages deployment. The public `generated_at` advanced while source commit, snapshot and archive commit remained unchanged. Detailed version receipts are in [live-receipt.json](live-receipt.json).
+- An independent probe against the real published gallery returned `changed=false` for unchanged archive revision, snapshot, latest attempt and source commit. Scheduled checks therefore retain the existing site when nothing changed.
+- The hourly schedule is enabled in the default branch at minute 17. This receipt verifies the manual execution path and unchanged-state detection; the first natural scheduled run and the next new daily snapshot are not claimed as observed here. GitHub can delay schedules or disable them after prolonged repository inactivity.
 
-## Outstanding delivery gates
+## Source and data checks
 
-- Feature-PR integration from the verified initial baseline.
-- Actions CI and GitHub Pages deployment from an exact source commit.
-- Anonymous public URL, desktop/mobile browsing, image downloads, search/filter and native-dialog interactions in a real browser.
-- Manual cloud refresh and future natural scheduled-run evidence. The hourly workflow is prepared in source, not activated.
+The published source fixture is archive commit `e0b6f46bfae683cce14269bfcde632552aeffd8a`, snapshot `2026-11-10T093020Z-eb9b8257a8`, completed `2026-11-10T09:36:43.114Z`.
 
-The local HTTP preview was not reachable from the browser, and its file-URL fallback is prohibited by the browser policy. No alternate browser route was used to bypass that restriction. These failures do not imply anything about future public Pages availability.
+- A fresh remote probe resolved the existing archive to that immutable commit.
+- Downloaded 90 existing archive files for 23 chart-input datasets. Physical/logical SHA-256 digests and record/chunk counts were verified. Production downloads reject missing storage checksum entries.
+- The remaining five public datasets are represented by actual manifest coverage metadata rather than unnecessary bulk downloads. There are 28 allowlisted public dataset types in total.
+- All 14 PNGs were rebuilt from freshly downloaded data and independently from an existing archive checkout. No OpenRouter upstream requests or private-account collection were added.
+- Anonymous HTTP checks verified all 14 published PNG signatures and SHA-256 digests against the published source manifest, plus HTML, CSS, JavaScript, version and coverage assets.
 
-## Repository setup
+## Automated and visual checks
 
-On November 11 HKT the supported, specifically reviewed execution route successfully resolved the earlier GitHub API access restriction for this task. The repository is public at https://github.com/yuxiaoli/openrouter-charts, with verified default branch `develop`. Both initial branches pointed to `0533a8d98e858a5028b912fc3b1a65d7c91c8d72`; `main` remains the initial README baseline. No network/security setting was changed and no credential was created or exposed. Pages settings and deployment remain pending at this source checkpoint.
+- 21 Python tests passed for public-data boundaries, path safety, complete-snapshot selection, gzip/checksum/count validation, required production checksum entries, unchanged/manual/code-change refresh paths, newer failed attempts and snapshot mismatch rejection.
+- Five JavaScript behavior tests passed for filtering/reset, search/empty recovery, repeated zoom/close/reopen, backdrop behavior and stale-age warnings.
+- JSON Schema examples, source registry, generated version metadata, all chart identities/hashes and relative page assets passed. JavaScript syntax, Python compile and shell command-reference syntax passed.
+- Independent chart/contact-sheet review confirmed the original fourteen Chinese layouts, white background, blue/gold palette, units and caveats.
+- Real desktop Chromium browsing passed search, category filtering, empty-state recovery, original-image navigation, zoom opening, Escape/close and reopening with the correct image. The final lazy-loaded chart loaded successfully.
+- An actual browser PNG download succeeded. The file was 312,770 bytes; its SHA-256 is recorded in the receipt.
+
+## Verification limits
+
+Responsive CSS is implemented, but physical mobile devices, Safari and mobile-device emulation have not been verified. The page offers full-resolution image links even without JavaScript. Future upstream snapshot changes and future natural scheduled runs require their own actual observations; they are not inferred from this release test. GitHub Actions currently emits nonblocking Node-runtime deprecation notices for some third-party actions; the verified runs succeeded.
