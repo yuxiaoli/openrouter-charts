@@ -1,0 +1,12 @@
+.venv/
+.cache/
+__pycache__/
+*.pyc
+dist/
+.charts-build-*/
+.DS_Store
+.env
+.env.*
+!.env.example
+refs/*
+!refs/.repos.json
