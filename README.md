@@ -2,7 +2,9 @@
 
 A daily public-data chart collection built from [OpenRouter Data](https://github.com/yuxiaoli/openrouter-data). The site preserves the original fourteen Chinese charts: white backgrounds, blue/gold palette, labeled units and source caveats. Search, filter, enlarge and download full-resolution PNGs.
 
-Intended GitHub Pages destination: `https://yuxiaoli.github.io/openrouter-charts/`. Publication status is tracked in [acceptance](docs/acceptance.md); this URL is not a claim of deployment until verified there.
+**Live gallery: [yuxiaoli.github.io/openrouter-charts](https://yuxiaoli.github.io/openrouter-charts/)**
+
+Published on GitHub Pages and checked against its source commit and all fourteen image hashes. See [acceptance](docs/acceptance.md) for deployment, refresh and browser-test receipts.
 
 ## Data and refresh
 

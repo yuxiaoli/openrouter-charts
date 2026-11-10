@@ -1,0 +1,66 @@
+{
+  "version": {
+    "schema_version": 1,
+    "archive_revision": "e0b6f46bfae683cce14269bfcde632552aeffd8a",
+    "snapshot": "2026-11-10T093020Z-eb9b8257a8",
+    "latest_attempt": {
+      "id": "2026-11-10T093020Z-eb9b8257a8",
+      "status": "success",
+      "completed_at": "2026-11-10T09:36:43.114Z"
+    },
+    "source_commit": "700ff949b3b0e66be5aaf9f2b5bda2ecf2880ffc",
+    "collected_at": "2026-11-10T09:36:43.114Z",
+    "generated_at": "2026-11-10T17:09:26.540140+00:00",
+    "chart_count": 14,
+    "public_dataset_count": 28
+  },
+  "verified_charts": [
+    "01_catalogue.png",
+    "02_price_performance.png",
+    "03_model_rankings.png",
+    "04_historical_trends.png",
+    "05_modality_requests.png",
+    "06_task_mix.png",
+    "07_applications.png",
+    "08_session_cost.png",
+    "09_providers_availability.png",
+    "10_model_activity.png",
+    "11_provider_router_discovery.png",
+    "12_content_coverage.png",
+    "13_benchmarks.png",
+    "14_capabilities_policies.png"
+  ],
+  "assets": 4,
+  "desktop_browser": {
+    "viewport_width": 1180,
+    "filter_search_empty_recovery": true,
+    "zoom_escape_close_reopen": true,
+    "last_chart_loaded": true,
+    "original_png_download_bytes": 312770,
+    "original_png_sha256": "237d631ec70bda5e5558d9953c32c545965920918ad15ff1a49f7bdaaafe021f",
+    "mobile_device_browser": "not verified"
+  },
+  "unchanged_live_probe": {
+    "changed": false,
+    "source_commit": "700ff949b3b0e66be5aaf9f2b5bda2ecf2880ffc"
+  },
+  "manual_refresh": {
+    "run_url": "https://github.com/yuxiaoli/openrouter-charts/actions/runs/42862888497",
+    "version": {
+      "schema_version": 1,
+      "archive_revision": "e0b6f46bfae683cce14269bfcde632552aeffd8a",
+      "snapshot": "2026-11-10T093020Z-eb9b8257a8",
+      "latest_attempt": {
+        "id": "2026-11-10T093020Z-eb9b8257a8",
+        "status": "success",
+        "completed_at": "2026-11-10T09:36:43.114Z"
+      },
+      "source_commit": "700ff949b3b0e66be5aaf9f2b5bda2ecf2880ffc",
+      "collected_at": "2026-11-10T09:36:43.114Z",
+      "generated_at": "2026-11-10T17:15:01.466151+00:00",
+      "chart_count": 14,
+      "public_dataset_count": 28
+    },
+    "conclusion": "success"
+  }
+}
